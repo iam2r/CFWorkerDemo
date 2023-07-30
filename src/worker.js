@@ -1,4 +1,4 @@
-const hostnames = ['www.piyao.org.cn', 'tv.cctv.com', 'github.com'];
+const hostnames = ['github.com'];
 export default {
 	async fetch(request) {
 		const url = new URL(request.url);
