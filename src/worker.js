@@ -1,3 +1,4 @@
+const hostnames = ['www.piyao.org.cn', 'www.12306.cn', 'github.com'];
 export default {
 	async fetch(request) {
 		const url = new URL(request.url);
@@ -7,7 +8,7 @@ export default {
 				port: 443,
 			});
 		}
-		url.hostname = 'www.piyao.org.cn';
+		url.hostname = hostnames[Math.floor(Math.random() * hostnames.length)];
 		return await fetch(new Request(url, request));
 	},
 };
