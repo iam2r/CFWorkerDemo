@@ -1,5 +1,5 @@
 ---
-title: CFWorkerDemo
+title: cf-worker-demo
 emoji: 👀
 colorFrom: green
 colorTo: green
