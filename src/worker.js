@@ -13,7 +13,16 @@ export default {
 					});
 				}
 				url.hostname = hostnames[Math.floor(Math.random() * hostnames.length)];
-				return await fetch(new Request(url, request));
+				const newHeaders = new Headers(request.headers);
+				newHeaders.set('cf-connecting-ip', newHeaders.get('x-forwarded-for') || newHeaders.get('cf-connecting-ip'));
+				newHeaders.set('x-forwarded-for', newHeaders.get('cf-connecting-ip'));
+				newHeaders.set('x-real-ip', newHeaders.get('cf-connecting-ip'));
+				newHeaders.set('referer', 'https://www.google.com/q=edtunnel');
+				request = new Request(url, {
+					...request,
+					headers: newHeaders,
+				});
+				return await fetch(request, { redirect: 'manual' });
 			}
 		}
 	},
