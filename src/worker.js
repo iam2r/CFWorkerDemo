@@ -6,7 +6,6 @@ export default {
 			case '/health':
 				return new Response(JSON.stringify(request.cf, null, 2), { status: 200 });
 			default: {
-				return new Response(JSON.stringify(request.cf, null, 2), { status: 200 });
 				if (url.protocol === 'http:') {
 					Object.assign(url, {
 						protocol: 'https:',
