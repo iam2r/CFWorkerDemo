@@ -1,13 +1,4 @@
-const hostnames = [
-	'www.fmprc.gov.cn',
-	'www.xuexi.cn',
-	'www.gov.cn',
-	'mail.gov.cn',
-	'www.mofcom.gov.cn',
-	'www.gfbzb.gov.cn',
-	'www.miit.gov.cn',
-	'www.12377.cn',
-];
+const hostnames = ['openai-billing-iam2r.vercel.app'];
 export default {
 	async fetch(request) {
 		const url = new URL(request.url);
