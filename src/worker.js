@@ -1,4 +1,13 @@
-const hostnames = ['github.com'];
+const hostnames = [
+	'www.fmprc.gov.cn',
+	'www.xuexi.cn',
+	'www.gov.cn',
+	'mail.gov.cn',
+	'www.mofcom.gov.cn',
+	'www.gfbzb.gov.cn',
+	'www.miit.gov.cn',
+	'www.12377.cn',
+];
 export default {
 	async fetch(request) {
 		const url = new URL(request.url);
